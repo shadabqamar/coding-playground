@@ -9,6 +9,7 @@ public class FirstFloorRoom implements Building {
 	// constructor injection
 	public FirstFloorRoom(DailyService firstFloorService) {
 		dailyService = firstFloorService;
+		System.out.println(dailyService.floorwiseParking());
 	}
 
 	public String getWindow() {
