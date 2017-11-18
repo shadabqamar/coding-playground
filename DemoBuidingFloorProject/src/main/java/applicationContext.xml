@@ -7,7 +7,9 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- Define your beans here .Change class name to change dependency -->
-	<bean id="myFloor" class="org.demo.springdemoproject.FirstFloorRoom"></bean>
+	<bean id="firstFloor" class="org.demo.springdemoproject.FirstFloorRoom"></bean>
+	<bean id="secondFloor" class="org.demo.springdemoproject.SecondFloorRoom"></bean>
+
 
 </beans>
 

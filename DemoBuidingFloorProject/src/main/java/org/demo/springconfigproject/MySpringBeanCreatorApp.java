@@ -9,7 +9,21 @@ public class MySpringBeanCreatorApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		// retrieve bean from spring container
-		Building building = context.getBean("myFloor", Building.class);
+		Building building = context.getBean("firstFloor", Building.class);
+
+		// To check all beans are created from applicationContext file
+		for (String bean : context.getBeanDefinitionNames()) {
+			System.out.println("Bean name :" + bean);
+		}
+
+		System.out.println("----------------------------------------------");
+
+		/*
+		 * Uncomment below line to retrieve secondFloor bean and comment above
+		 * firstFloor bean retrieval
+		 */
+
+		// Building building = context.getBean("secondFloor", Building.class);
 
 		// let's call our new method for windows
 		System.out.println(building.getWindow());
