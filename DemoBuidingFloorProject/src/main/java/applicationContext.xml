@@ -8,8 +8,8 @@
 
 	<!-- Define your beans here .Change class name to change dependency -->
 	<!-- <bean id="firstFloor" class="org.shadab.demo.springioc.FirstFloorRoom"></bean> -->
-	<bean id="secondFloor" class="org.shadab.demo.springioc.SecondFloorRoom"></bean>
-
+<!-- 	<bean id="secondFloor" class="org.shadab.demo.springioc.SecondFloorRoom"></bean>
+ -->
 	<!--constructor injection -->
 	<!-- define dependency/helper -->
 	<bean id="dailyService" class="org.shadab.demo.service.MorningService"></bean>
@@ -18,7 +18,10 @@
 	<bean id="firstFloor" class="org.shadab.demo.springioc.FirstFloorRoom">
 		<constructor-arg ref="dailyService"></constructor-arg>
 	</bean>
-
+	<!-- inject dependency/helper using constructor injection -->
+	<bean id="secondFloor" class="org.shadab.demo.springioc.SecondFloorRoom">
+		<constructor-arg ref="dailyService"></constructor-arg>
+	</bean>
 
 
 </beans>

@@ -18,6 +18,8 @@ public class MySpringBeanCreatorApp {
 				System.out.println("dailyService bean injected successfully");
 			}
 		}
+		
+		System.out.println("Daily service :"+building.getDailyService());
 
 		System.out.println("----------------------------------------------");
 
@@ -29,10 +31,10 @@ public class MySpringBeanCreatorApp {
 		// Building building = context.getBean("secondFloor", Building.class);
 
 		// let's call our new method for windows
-		System.out.println("Bean window method"+building.getWindow());
+		System.out.println("Bean window method :"+building.getWindow());
 
 		// let's call our new method for doors
-		System.out.println("Bean door method"+building.getDoor());
+		System.out.println("Bean door method :"+building.getDoor());
 
 		// close the context
 		context.close();
