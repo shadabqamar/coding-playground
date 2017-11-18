@@ -1,6 +1,6 @@
-package org.demo.springconfigproject;
+package org.shadab.demo.configuration;
 
-import org.demo.springdemoproject.Building;
+import org.shadab.demo.springioc.Building;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MySpringBeanCreatorApp {
@@ -14,6 +14,9 @@ public class MySpringBeanCreatorApp {
 		// To check all beans are created from applicationContext file
 		for (String bean : context.getBeanDefinitionNames()) {
 			System.out.println("Bean name :" + bean);
+			if(bean.equalsIgnoreCase("dailyService")){
+				System.out.println("dailyService bean injected successfully");
+			}
 		}
 
 		System.out.println("----------------------------------------------");
@@ -26,10 +29,10 @@ public class MySpringBeanCreatorApp {
 		// Building building = context.getBean("secondFloor", Building.class);
 
 		// let's call our new method for windows
-		System.out.println(building.getWindow());
+		System.out.println("Bean window method"+building.getWindow());
 
 		// let's call our new method for doors
-		System.out.println(building.getDoor());
+		System.out.println("Bean door method"+building.getDoor());
 
 		// close the context
 		context.close();

@@ -1,4 +1,4 @@
-package org.demo.springdemoproject;
+package org.shadab.demo.springioc;
 
 public class SecondFloorRoom implements Building {
 

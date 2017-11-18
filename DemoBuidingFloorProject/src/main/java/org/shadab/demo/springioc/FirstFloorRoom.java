@@ -1,6 +1,15 @@
-package org.demo.springdemoproject;
+package org.shadab.demo.springioc;
+
+import org.shadab.demo.service.DailyService;
 
 public class FirstFloorRoom implements Building {
+
+	private DailyService dailyService;
+
+	// constructor injection
+	public FirstFloorRoom(DailyService firstFloorService) {
+		dailyService = firstFloorService;
+	}
 
 	public String getWindow() {
 		return "First floor window";
