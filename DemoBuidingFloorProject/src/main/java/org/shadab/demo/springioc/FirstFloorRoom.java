@@ -58,5 +58,14 @@ public class FirstFloorRoom implements Building {
 		this.totalMaintainenceCost = totalMaintainence;
 	}
 	
+	//init method for bean lifecycle test
+	public void getStartup()
+	{
+		System.out.println("Bean created ");
+	}
 	
+	//desrtoy bean
+	public void getCleanup(){
+		System.out.println("Bean destroyed");
+	}
 }
