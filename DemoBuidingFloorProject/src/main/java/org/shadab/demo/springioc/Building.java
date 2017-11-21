@@ -10,7 +10,7 @@ public interface Building {
 	
 	public String getLight();
 	
-	public String getDailyService();
+	public String getYourDailyService();
 
 	
 

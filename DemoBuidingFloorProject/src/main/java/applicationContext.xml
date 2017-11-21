@@ -12,16 +12,22 @@
  -->
 	<!--constructor injection -->
 	<!-- define dependency/helper -->
-	<bean id="dailyService" class="org.shadab.demo.service.MorningService"></bean>
+	<bean id="mydailyService" class="org.shadab.demo.service.MorningService"></bean>
 	
 	<!-- inject dependency/helper using constructor injection -->
 	<bean id="firstFloor" class="org.shadab.demo.springioc.FirstFloorRoom">
-		<constructor-arg ref="dailyService"></constructor-arg>
+		<constructor-arg ref="mydailyService"></constructor-arg>
 	</bean>
 	<!-- inject dependency/helper using constructor injection -->
-	<bean id="secondFloor" class="org.shadab.demo.springioc.SecondFloorRoom">
+<!-- 	<bean id="secondFloor" class="org.shadab.demo.springioc.SecondFloorRoom">
 		<constructor-arg ref="dailyService"></constructor-arg>
-	</bean>
+	</bean> -->
+	
+	<!-- inject using setter injection -->
+	<bean id="secondFloor" class="org.shadab.demo.springioc.SecondFloorRoom">
+		<property name="dailyService" ref="mydailyService"></property>
+	</bean> 
+	
 
 
 </beans>

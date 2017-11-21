@@ -8,12 +8,19 @@ public class SecondFloorRoom implements Building {
 	private DailyService dailyService;
 
 	// constructor injection
-	public SecondFloorRoom(DailyService secondFloorRoom) {
+/*	public SecondFloorRoom(DailyService secondFloorRoom) {
 		dailyService = secondFloorRoom;
 		System.out.println("Dailyservice dependency created in SecondFloorRoom bean");
-	}
+	}*/
 
+	
 	public SecondFloorRoom() {
+	}
+	
+	//setter injection
+	public void setDailyService(DailyService secondFloorRoomService) {
+		this.dailyService = secondFloorRoomService;
+		System.out.println("DailyService injected by setter injection in secondfloor");
 	}
 
 	public String getWindow() {
@@ -33,7 +40,7 @@ public class SecondFloorRoom implements Building {
 	}
 
 	@Override
-	public String getDailyService() {
+	public String getYourDailyService() {
 		return dailyService.floorwiseParking();
 	}
 

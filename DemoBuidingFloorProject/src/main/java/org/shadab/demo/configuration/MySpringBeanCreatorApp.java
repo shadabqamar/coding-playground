@@ -9,8 +9,13 @@ public class MySpringBeanCreatorApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		// retrieve bean from spring container
-		Building building = context.getBean("firstFloor", Building.class);
+		Building firstFloorbean = context.getBean("firstFloor", Building.class);
 
+		//bean injected by setter injection
+		Building secondFloorbean =context.getBean("secondFloor", Building.class);
+		
+
+		 
 		// To check all beans are created from applicationContext file
 		for (String bean : context.getBeanDefinitionNames()) {
 			System.out.println("Bean name :" + bean);
@@ -19,22 +24,19 @@ public class MySpringBeanCreatorApp {
 			}
 		}
 		
-		System.out.println("Daily service :"+building.getDailyService());
+		System.out.println("Daily service wish for first floor:"+firstFloorbean.getYourDailyService());
+		System.out.println("Daily service wish for second floor:"+secondFloorbean.getYourDailyService());
 
 		System.out.println("----------------------------------------------");
-
-		/*
-		 * Uncomment below line to retrieve secondFloor bean and comment above
-		 * firstFloor bean retrieval
-		 */
-
-		// Building building = context.getBean("secondFloor", Building.class);
-
+		
 		// let's call our new method for windows
-		System.out.println("Bean window method :"+building.getWindow());
+		System.out.println("Bean window method :"+firstFloorbean.getWindow());
+		System.out.println("Bean window method :"+secondFloorbean.getWindow());
 
 		// let's call our new method for doors
-		System.out.println("Bean door method :"+building.getDoor());
+		System.out.println("Bean door method :"+firstFloorbean.getDoor());
+		System.out.println("Bean door method :"+secondFloorbean.getDoor());
+
 
 		// close the context
 		context.close();

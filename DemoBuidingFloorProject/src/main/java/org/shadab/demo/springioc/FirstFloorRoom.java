@@ -33,7 +33,7 @@ public class FirstFloorRoom implements Building {
 	}
 
 	@Override
-	public String getDailyService() {
+	public String getYourDailyService() {
 		return dailyService.floorwiseParking();
 	}
 
