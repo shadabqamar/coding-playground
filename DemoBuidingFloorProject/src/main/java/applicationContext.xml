@@ -8,26 +8,31 @@
 
 	<!-- Define your beans here .Change class name to change dependency -->
 	<!-- <bean id="firstFloor" class="org.shadab.demo.springioc.FirstFloorRoom"></bean> -->
-<!-- 	<bean id="secondFloor" class="org.shadab.demo.springioc.SecondFloorRoom"></bean>
- -->
+	<!-- <bean id="secondFloor" class="org.shadab.demo.springioc.SecondFloorRoom"></bean> -->
 	<!--constructor injection -->
 	<!-- define dependency/helper -->
 	<bean id="mydailyService" class="org.shadab.demo.service.MorningService"></bean>
-	
+
 	<!-- inject dependency/helper using constructor injection -->
 	<bean id="firstFloor" class="org.shadab.demo.springioc.FirstFloorRoom">
 		<constructor-arg ref="mydailyService"></constructor-arg>
+		
+	<!-- inject literal dependency -->
+
+		<property name="totalRooms" value="5"></property>
+		<property name="totalMaintainence" value="10000"></property>
+
+
 	</bean>
 	<!-- inject dependency/helper using constructor injection -->
-<!-- 	<bean id="secondFloor" class="org.shadab.demo.springioc.SecondFloorRoom">
-		<constructor-arg ref="dailyService"></constructor-arg>
-	</bean> -->
-	
+	<!-- <bean id="secondFloor" class="org.shadab.demo.springioc.SecondFloorRoom"> 
+		<constructor-arg ref="dailyService"></constructor-arg> </bean> -->
+
 	<!-- inject using setter injection -->
 	<bean id="secondFloor" class="org.shadab.demo.springioc.SecondFloorRoom">
 		<property name="dailyService" ref="mydailyService"></property>
-	</bean> 
-	
+	</bean>
+
 
 
 </beans>
