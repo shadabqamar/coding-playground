@@ -2,6 +2,6 @@ package org.shadab.demo.service;
 
 public interface DailyService {
 	
-	public String floorwiseParking();
+	public String getFloorGreeting();
 
 }
